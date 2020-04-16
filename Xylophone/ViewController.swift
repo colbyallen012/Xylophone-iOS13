@@ -21,6 +21,13 @@ class ViewController: UIViewController {
         var val = sender.currentTitle!
         
         playSound(soundName: val)
+        
+        sender.alpha = 0.5
+
+        //Code should execute after 0.2 second delay.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            sender.alpha = 1.0
+        }
     }
     
     func playSound(soundName: String) {
